@@ -3,7 +3,7 @@ title: "Julia vs R Comparison Cheat Sheet"
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE, cache=FALSE)
+knitr::opts_chunk$set(echo = TRUE, cache=TRUE)
 knitr::knit_engines$set(julia = JuliaCall::eng_juliacall)
 ```
 
@@ -21,15 +21,46 @@ knitr::knit_engines$set(julia = JuliaCall::eng_juliacall)
 </style>
 
 
+## Vector
+
+#### Row vector, 1 × n-matrix
+
 <div class="column-left">
-## R
+```{r}
+x <- 1:3
+x
+```
+</div>
+<div class="column-right">
+```{julia}
+x = [1 2 3];
+x
+```
+</div>
+
+#### Column vector, m × 1-matrix
+<div class="column-left">
+```{r}
+x <- t(1:3)
+x
+```
+</div>
+<div class="column-right">
+```{julia}
+x = [1 2 3]';
+x
+```
+</div>
+
+
+## String
+<div class="column-left">
 ```{r}
 x <- "Hello, R"
 x
 ```
 </div>
 <div class="column-right">
-## Julia
 ```{julia}
 x = "Hello, Julia";
 x

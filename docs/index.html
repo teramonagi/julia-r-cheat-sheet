@@ -207,17 +207,52 @@ $(document).ready(function () {
   text-align: left;
 }
 </style>
+<div id="vector" class="section level2">
+<h2>Vector</h2>
+<div id="row-vector-1-n-matrix" class="section level4">
+<h4>Row vector, 1 × n-matrix</h4>
 <div class="column-left">
-<h2 id="r">R</h2>
+<pre class="r"><code>x &lt;- 1:3
+x</code></pre>
+<pre><code>## [1] 1 2 3</code></pre>
+</div>
+<div class="column-right">
+<pre class="julia"><code>x = [1 2 3];
+x</code></pre>
+<pre><code>## 1×3 Array{Int64,2}:
+##  1  2  3</code></pre>
+</div>
+</div>
+<div id="column-vector-m-1-matrix" class="section level4">
+<h4>Column vector, m × 1-matrix</h4>
+<div class="column-left">
+<pre class="r"><code>x &lt;- t(1:3)
+x</code></pre>
+<pre><code>##      [,1] [,2] [,3]
+## [1,]    1    2    3</code></pre>
+</div>
+<div class="column-right">
+<pre class="julia"><code>x = [1 2 3]&#39;;
+x</code></pre>
+<pre><code>## 3×1 Array{Int64,2}:
+##  1
+##  2
+##  3</code></pre>
+</div>
+</div>
+</div>
+<div id="string" class="section level2">
+<h2>String</h2>
+<div class="column-left">
 <pre class="r"><code>x &lt;- &quot;Hello, R&quot;
 x</code></pre>
 <pre><code>## [1] &quot;Hello, R&quot;</code></pre>
 </div>
 <div class="column-right">
-<h2 id="julia">Julia</h2>
 <pre class="julia"><code>x = &quot;Hello, Julia&quot;;
 x</code></pre>
 <pre><code>## &quot;Hello, Julia&quot;</code></pre>
+</div>
 </div>
 
 
