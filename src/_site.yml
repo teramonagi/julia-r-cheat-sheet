@@ -1,0 +1,7 @@
+name: "Julia vs R Comparison Cheat Sheet"
+navbar: 
+  title: ""
+  left:
+    - text: "Home"
+      href: index.html
+output_dir: "../docs"

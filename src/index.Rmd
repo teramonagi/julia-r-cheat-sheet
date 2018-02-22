@@ -1,0 +1,37 @@
+---
+title: "Julia vs R Comparison Cheat Sheet"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, cache=FALSE)
+knitr::knit_engines$set(julia = JuliaCall::eng_juliacall)
+```
+
+<style>
+.column-left{
+  float: left;
+  width: 47.5%;
+  text-align: left;
+}
+.column-right{
+  float: right;
+  width: 47.5%;
+  text-align: left;
+}
+</style>
+
+
+<div class="column-left">
+## R
+```{r}
+x <- "Hello, R"
+x
+```
+</div>
+<div class="column-right">
+## Julia
+```{julia}
+x = "Hello, Julia";
+x
+```
+</div>
