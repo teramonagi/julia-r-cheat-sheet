@@ -206,6 +206,9 @@ $(document).ready(function () {
   width: 47.5%;
   text-align: left;
 }
+.clear {
+  clear:both;
+}
 </style>
 <div id="vector" class="section level2">
 <h2>Vector</h2>
@@ -221,6 +224,9 @@ x</code></pre>
 x</code></pre>
 <pre><code>## 1×3 Array{Int64,2}:
 ##  1  2  3</code></pre>
+</div>
+<div class="clear">
+
 </div>
 </div>
 <div id="column-vector-m-1-matrix" class="section level4">
@@ -239,6 +245,9 @@ x</code></pre>
 ##  2
 ##  3</code></pre>
 </div>
+<div class="clear">
+
+</div>
 </div>
 </div>
 <div id="string" class="section level2">
@@ -252,6 +261,43 @@ x</code></pre>
 <pre class="julia"><code>x = &quot;Hello, Julia&quot;;
 x</code></pre>
 <pre><code>## &quot;Hello, Julia&quot;</code></pre>
+</div>
+<div class="clear">
+
+</div>
+<div id="concatenate" class="section level4">
+<h4>Concatenate</h4>
+<div class="column-left">
+<pre class="r"><code>x &lt;- paste(&quot;Hello,&quot;, &quot;R&quot;)
+x</code></pre>
+<pre><code>## [1] &quot;Hello, R&quot;</code></pre>
+</div>
+<div class="column-right">
+<pre class="julia"><code>x = &quot;Hello,&quot; * &quot;julia&quot;;
+x = string(&quot;Hello,&quot;, &quot;julia&quot;); </code></pre>
+<pre><code>## &quot;Hello,julia&quot;</code></pre>
+<pre class="julia"><code>x</code></pre>
+<pre><code>## &quot;Hello,julia&quot;</code></pre>
+</div>
+<div class="clear">
+
+</div>
+</div>
+<div id="replicate" class="section level4">
+<h4>Replicate</h4>
+<div class="column-left">
+<pre class="r"><code>x &lt;- paste(rep(&#39;a&#39;, 5), collapse=&#39;&#39;)
+x</code></pre>
+<pre><code>## [1] &quot;aaaaa&quot;</code></pre>
+</div>
+<div class="column-right">
+<pre class="julia"><code>x = repeat(&quot;a&quot;, 3)</code></pre>
+<pre><code>## &quot;aaa&quot;</code></pre>
+<pre class="julia"><code>x = &#39;a&#39;^3</code></pre>
+<pre><code>## &quot;aaa&quot;</code></pre>
+<pre class="julia"><code>x</code></pre>
+<pre><code>## &quot;aaa&quot;</code></pre>
+</div>
 </div>
 </div>
 

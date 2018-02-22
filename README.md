@@ -6,6 +6,6 @@ Julia vs R Comparison Cheat Sheet
 
 ## How to build this document
 ```{r}
-# In src directory
+# On R console in `src` directory
 > rmarkdown::render_site(encoding = 'UTF-8')
 ```

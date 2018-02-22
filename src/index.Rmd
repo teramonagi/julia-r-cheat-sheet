@@ -18,6 +18,9 @@ knitr::knit_engines$set(julia = JuliaCall::eng_juliacall)
   width: 47.5%;
   text-align: left;
 }
+.clear {
+  clear:both;
+}
 </style>
 
 
@@ -37,6 +40,8 @@ x = [1 2 3];
 x
 ```
 </div>
+<div class="clear">
+</div>
 
 #### Column vector, m × 1-matrix
 <div class="column-left">
@@ -51,7 +56,8 @@ x = [1 2 3]';
 x
 ```
 </div>
-
+<div class="clear">
+</div>
 
 ## String
 <div class="column-left">
@@ -63,6 +69,40 @@ x
 <div class="column-right">
 ```{julia}
 x = "Hello, Julia";
+x
+```
+</div>
+<div class="clear">
+</div>
+
+#### Concatenate	
+<div class="column-left">
+```{r}
+x <- paste("Hello,", "R")
+x
+```
+</div>
+<div class="column-right">
+```{julia}
+x = "Hello," * "julia";
+x = string("Hello,", "julia"); 
+x
+```
+</div>
+<div class="clear">
+</div>
+
+#### Replicate
+<div class="column-left">
+```{r}
+x <- paste(rep('a', 5), collapse='')
+x
+```
+</div>
+<div class="column-right">
+```{julia}
+x = repeat("a", 3)
+x = 'a'^3
 x
 ```
 </div>
