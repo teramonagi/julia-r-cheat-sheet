@@ -298,6 +298,71 @@ x</code></pre>
 <pre class="julia"><code>x</code></pre>
 <pre><code>## &quot;aaa&quot;</code></pre>
 </div>
+<div class="clear">
+
+</div>
+</div>
+<div id="length" class="section level4">
+<h4>Length</h4>
+<div class="column-left">
+<pre class="r"><code>x &lt;- &quot;abcde&quot;
+stringr::str_length(x)</code></pre>
+<pre><code>## [1] 5</code></pre>
+</div>
+<div class="column-right">
+<pre class="julia"><code>x = &quot;abcde&quot;;
+length(x)</code></pre>
+<pre><code>## 5</code></pre>
+</div>
+<div class="clear">
+
+</div>
+</div>
+<div id="containdetect" class="section level4">
+<h4>contain/detect</h4>
+<div class="column-left">
+<pre class="r"><code>stringr::str_detect(&quot;Hello, world.&quot;, &quot;world&quot;)</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+</div>
+<div class="column-right">
+<pre class="julia"><code>contains(&quot;Hello, world.&quot;, &quot;world&quot;)</code></pre>
+<pre><code>## true</code></pre>
+</div>
+<div class="clear">
+
+</div>
+</div>
+<div id="collapse-into-a-single-stringjoin" class="section level4">
+<h4>collapse into a single string/join</h4>
+<div class="column-left">
+<pre class="r"><code>x &lt;- c(&quot;apples&quot;, &quot;bananas&quot;, &quot;pineapples&quot;)
+paste(x, collapse = &quot;, &quot;)</code></pre>
+<pre><code>## [1] &quot;apples, bananas, pineapples&quot;</code></pre>
+</div>
+<div class="column-right">
+<pre class="julia"><code>x = [&quot;apples&quot;, &quot;bananas&quot;, &quot;pineapples&quot;];
+join(x, &quot;, &quot;)</code></pre>
+<pre><code>## &quot;apples, bananas, pineapples&quot;</code></pre>
+</div>
+<div class="clear">
+
+</div>
+</div>
+<div id="format-and-interpolate-a-string" class="section level4">
+<h4>Format and interpolate a string</h4>
+<div class="column-left">
+<pre class="r"><code>x &lt;- &quot;Hello, world&quot;
+glue::glue(&quot;{x}&quot;)</code></pre>
+<pre><code>## Hello, world</code></pre>
+</div>
+<div class="column-right">
+<pre class="julia"><code>x = &quot;Hello, world&quot;;
+&quot;$x&quot;</code></pre>
+<pre><code>## &quot;Hello, world&quot;</code></pre>
+</div>
+<div class="clear">
+
+</div>
 </div>
 </div>
 

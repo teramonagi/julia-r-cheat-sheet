@@ -106,3 +106,69 @@ x = 'a'^3
 x
 ```
 </div>
+<div class="clear">
+</div>
+
+
+#### Length
+<div class="column-left">
+```{r}
+x <- "abcde"
+stringr::str_length(x)
+```
+</div>
+<div class="column-right">
+```{julia}
+x = "abcde";
+length(x)
+```
+</div>
+<div class="clear">
+</div>
+
+#### contain/detect
+<div class="column-left">
+```{r}
+stringr::str_detect("Hello, world.", "world")
+```
+</div>
+<div class="column-right">
+```{julia}
+contains("Hello, world.", "world")
+```
+</div>
+<div class="clear">
+</div>
+
+#### collapse into a single string/join
+<div class="column-left">
+```{r}
+x <- c("apples", "bananas", "pineapples")
+paste(x, collapse = ", ")
+```
+</div>
+<div class="column-right">
+```{julia}
+x = ["apples", "bananas", "pineapples"];
+join(x, ", ")
+```
+</div>
+<div class="clear">
+</div>
+
+
+#### Format and interpolate a string
+<div class="column-left">
+```{r}
+x <- "Hello, world"
+glue::glue("{x}")
+```
+</div>
+<div class="column-right">
+```{julia}
+x = "Hello, world";
+"$x"
+```
+</div>
+<div class="clear">
+</div>
