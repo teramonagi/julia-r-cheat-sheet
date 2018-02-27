@@ -172,3 +172,41 @@ x = "Hello, world";
 </div>
 <div class="clear">
 </div>
+
+
+## Function
+<div class="column-left">
+```{r}
+f <- function(x){x+1}
+f(1)
+```
+</div>
+<div class="column-right">
+```{julia}
+function f(x)
+  x + 1
+end;
+f(1)
+```
+```{julia}
+f(x) = x + 1;
+f(1)
+```
+</div>
+<div class="clear">
+</div>
+
+#### Anonymous function
+<div class="column-left">
+```{r}
+(function(x){x+1})(1)
+```
+</div>
+<div class="column-right">
+```{julia}
+(x -> x + 1)(1)
+```
+</div>
+<div class="clear">
+</div>
+
