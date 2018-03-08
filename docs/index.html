@@ -247,6 +247,29 @@ x</code></pre>
 ##  2
 ##  3</code></pre>
 </div>
+</div>
+<div class="clear">
+
+</div>
+<div id="sequence-generation" class="section level4">
+<h4>Sequence Generation</h4>
+<div class="column-left">
+<pre class="r"><code>x &lt;- seq(5, 1, by=-2)
+x</code></pre>
+<pre><code>## [1] 5 3 1</code></pre>
+</div>
+<div class="column-right">
+<pre class="julia"><code>x = collect(5:-2:1)</code></pre>
+<pre><code>## 3-element Array{Int64,1}:
+##  5
+##  3
+##  1</code></pre>
+<pre class="julia"><code>x</code></pre>
+<pre><code>## 3-element Array{Int64,1}:
+##  5
+##  3
+##  1</code></pre>
+</div>
 <div class="clear">
 
 </div>
@@ -288,16 +311,14 @@ x = string(&quot;Hello,&quot;, &quot;julia&quot;); </code></pre>
 <div id="replicate" class="section level4">
 <h4>Replicate</h4>
 <div class="column-left">
-<pre class="r"><code>x &lt;- paste(rep(&#39;a&#39;, 5), collapse=&#39;&#39;)
+<pre class="r"><code>x &lt;- paste(rep(&#39;a&#39;, 3), collapse=&#39;&#39;)
 x</code></pre>
-<pre><code>## [1] &quot;aaaaa&quot;</code></pre>
+<pre><code>## [1] &quot;aaa&quot;</code></pre>
 </div>
 <div class="column-right">
-<pre class="julia"><code>x = repeat(&quot;a&quot;, 3)</code></pre>
-<pre><code>## &quot;aaa&quot;</code></pre>
-<pre class="julia"><code>x = &#39;a&#39;^3</code></pre>
-<pre><code>## &quot;aaa&quot;</code></pre>
-<pre class="julia"><code>x</code></pre>
+<pre class="julia"><code>x = repeat(&quot;a&quot;, 3);
+x = &#39;a&#39;^3;
+x</code></pre>
 <pre><code>## &quot;aaa&quot;</code></pre>
 </div>
 <div class="clear">

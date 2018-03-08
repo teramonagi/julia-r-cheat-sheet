@@ -1,10 +1,21 @@
 ---
+output: html_document
 title: "Julia vs R Comparison Cheat Sheet"
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, cache=TRUE)
 knitr::knit_engines$set(julia = JuliaCall::eng_juliacall)
+knitr::knit_hooks$set(chunk = function(x, options) {
+  print(options)
+  if (options$engine == "R") { 
+    paste0("<div class='column-left'> ", x, "</div>")
+  }
+  else if (options$engine == "julia") { 
+    paste0("<div class='column-right'>", x, "</div>")}
+  else { x }
+})
+
 ```
 
 <style>
@@ -28,185 +39,149 @@ knitr::knit_engines$set(julia = JuliaCall::eng_juliacall)
 
 #### Row vector, 1 × n-matrix
 
-<div class="column-left">
 ```{r}
 x <- 1:3
 x
 ```
-</div>
-<div class="column-right">
 ```{julia}
 x = [1 2 3];
 x
 ```
-</div>
-<div class="clear">
-</div>
+
+<div class="clear"></div>
 
 #### Column vector, m × 1-matrix
-<div class="column-left">
 ```{r}
 x <- t(1:3)
 x
 ```
-</div>
-<div class="column-right">
 ```{julia}
 x = [1 2 3]';
 x
 ```
 </div>
 <div class="clear">
-</div>
+
+#### Sequence Generation
+```{r}
+x <- seq(5, 1, by=-2)
+x
+```
+```{julia}
+x = collect(5:-2:1)
+x
+```
+<div class="clear"></div>
 
 ## String
-<div class="column-left">
 ```{r}
 x <- "Hello, R"
 x
 ```
-</div>
-<div class="column-right">
 ```{julia}
 x = "Hello, Julia";
 x
 ```
-</div>
 <div class="clear">
 </div>
 
 #### Concatenate	
-<div class="column-left">
 ```{r}
 x <- paste("Hello,", "R")
 x
 ```
-</div>
-<div class="column-right">
 ```{julia}
 x = "Hello," * "julia";
 x = string("Hello,", "julia"); 
 x
 ```
-</div>
 <div class="clear">
 </div>
 
 #### Replicate
-<div class="column-left">
 ```{r}
-x <- paste(rep('a', 5), collapse='')
+x <- paste(rep('a', 3), collapse='')
 x
 ```
-</div>
-<div class="column-right">
 ```{julia}
-x = repeat("a", 3)
-x = 'a'^3
+x = repeat("a", 3);
+x = 'a'^3;
 x
 ```
-</div>
 <div class="clear">
 </div>
 
 
 #### Length
-<div class="column-left">
 ```{r}
 x <- "abcde"
 stringr::str_length(x)
 ```
-</div>
-<div class="column-right">
 ```{julia}
 x = "abcde";
 length(x)
 ```
-</div>
 <div class="clear">
 </div>
 
 #### contain/detect
-<div class="column-left">
 ```{r}
 stringr::str_detect("Hello, world.", "world")
 ```
-</div>
-<div class="column-right">
 ```{julia}
 contains("Hello, world.", "world")
 ```
-</div>
 <div class="clear">
 </div>
 
 #### collapse into a single string/join
-<div class="column-left">
 ```{r}
 x <- c("apples", "bananas", "pineapples")
 paste(x, collapse = ", ")
 ```
-</div>
-<div class="column-right">
 ```{julia}
 x = ["apples", "bananas", "pineapples"];
 join(x, ", ")
 ```
-</div>
 <div class="clear">
 </div>
 
-
 #### Format and interpolate a string
-<div class="column-left">
 ```{r}
 x <- "Hello, world"
 glue::glue("{x}")
 ```
-</div>
-<div class="column-right">
 ```{julia}
 x = "Hello, world";
 "$x"
 ```
-</div>
 <div class="clear">
 </div>
 
 
 ## Function
-<div class="column-left">
 ```{r}
 f <- function(x){x+1}
 f(1)
 ```
-</div>
-<div class="column-right">
 ```{julia}
 function f(x)
   x + 1
 end;
 f(1)
-```
-```{julia}
 f(x) = x + 1;
 f(1)
 ```
-</div>
 <div class="clear">
 </div>
 
 #### Anonymous function
-<div class="column-left">
 ```{r}
 (function(x){x+1})(1)
 ```
-</div>
-<div class="column-right">
 ```{julia}
 (x -> x + 1)(1)
 ```
-</div>
 <div class="clear">
 </div>
 
