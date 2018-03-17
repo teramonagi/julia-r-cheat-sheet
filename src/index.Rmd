@@ -185,3 +185,33 @@ f(1)
 <div class="clear">
 </div>
 
+#### Show function content
+```{r}
+f <- function(x){
+  x + 1
+}
+f
+```
+```{julia}
+function f(x)
+  x + 1
+end;
+# less(f, (Number,)) not in REPL environment
+# See https://stackoverflow.com/a/26226605/3926333
+code_typed(f, (Number,))
+```
+<div class="clear">
+</div>
+
+## Types
+```{r}
+x <- 1
+class(x)
+```
+```{julia}
+x = 1
+typeof(x)
+```
+<div class="clear">
+</div>
+

@@ -422,6 +422,49 @@ f(1)</code></pre>
 
 </div>
 </div>
+<div id="show-function-content" class="section level4">
+<h4>Show function content</h4>
+<div class="column-left">
+<pre class="r"><code>f &lt;- function(x){
+  x + 1
+}
+f</code></pre>
+<pre><code>## function(x){
+##   x + 1
+## }</code></pre>
+</div>
+<div class="column-right">
+<pre class="julia"><code>function f(x)
+  x + 1
+end;
+# less(f, (Number,)) not in REPL environment
+code_typed(f, (Number,))</code></pre>
+<pre><code>## 1-element Array{Any,1}:
+##  CodeInfo(:(begin 
+##         return x + 1
+##     end))=&gt;Any</code></pre>
+</div>
+<div class="clear">
+
+</div>
+</div>
+</div>
+<div id="types" class="section level2">
+<h2>Types</h2>
+<div class="column-left">
+<pre class="r"><code>x &lt;- 1
+class(x)</code></pre>
+<pre><code>## [1] &quot;numeric&quot;</code></pre>
+</div>
+<div class="column-right">
+<pre class="julia"><code>x = 1</code></pre>
+<pre><code>## 1</code></pre>
+<pre class="julia"><code>typeof(x)</code></pre>
+<pre><code>## Int64</code></pre>
+</div>
+<div class="clear">
+
+</div>
 </div>
 
 
