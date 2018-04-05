@@ -4,6 +4,7 @@ title: "Julia vs R Comparison Cheat Sheet"
 ---
 
 ```{r setup, include=FALSE}
+knitr::opts_knit$set(root.dir = 'C:\\temp')
 knitr::opts_chunk$set(echo = TRUE, cache=TRUE)
 knitr::knit_engines$set(julia = JuliaCall::eng_juliacall)
 knitr::knit_hooks$set(chunk = function(x, options) {
@@ -72,6 +73,22 @@ x = collect(5:-2:1)
 x
 ```
 <div class="clear"></div>
+
+#### Access to each element
+```{r}
+x <- 1:3
+print(x[1])
+x[length(x)]
+```
+
+
+```{julia}
+x = [1 2 3];
+x[1]
+x[end]
+```
+<div class="clear"></div>
+
 
 ## String
 ```{r}
@@ -209,9 +226,39 @@ x <- 1
 class(x)
 ```
 ```{julia}
-x = 1
+x = 1;
 typeof(x)
 ```
 <div class="clear">
 </div>
 
+## Dealing with NA (missing)
+```{r}
+x <- c(1,2,NA,5)
+sum(x, na.rm = TRUE)
+```
+```{julia}
+# not yet in v0.6.2
+#x = [1, 2, missing, 5];
+#sum(skipmissing(x))
+```
+<div class="clear">
+</div>
+
+
+## Set and get working directory
+```{r}
+setwd("C:\\temp")
+```
+
+```{julia}
+cd("C:\\temp")
+```
+
+```{r}
+getwd()
+```
+
+```{julia}
+pwd()
+```

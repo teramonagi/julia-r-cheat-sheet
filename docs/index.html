@@ -274,6 +274,26 @@ x</code></pre>
 
 </div>
 </div>
+<div id="access-to-each-element" class="section level4">
+<h4>Access to each element</h4>
+<div class="column-left">
+<pre class="r"><code>x &lt;- 1:3
+print(x[1])</code></pre>
+<pre><code>## [1] 1</code></pre>
+<pre class="r"><code>x[length(x)]</code></pre>
+<pre><code>## [1] 3</code></pre>
+</div>
+<div class="column-right">
+<pre class="julia"><code>x = [1 2 3];
+x[1]</code></pre>
+<pre><code>## 1</code></pre>
+<pre class="julia"><code>x[end]</code></pre>
+<pre><code>## 3</code></pre>
+</div>
+<div class="clear">
+
+</div>
+</div>
 </div>
 <div id="string" class="section level2">
 <h2>String</h2>
@@ -438,6 +458,7 @@ f</code></pre>
   x + 1
 end;
 # less(f, (Number,)) not in REPL environment
+# See https://stackoverflow.com/a/26226605/3926333
 code_typed(f, (Number,))</code></pre>
 <pre><code>## 1-element Array{Any,1}:
 ##  CodeInfo(:(begin 
@@ -457,13 +478,45 @@ class(x)</code></pre>
 <pre><code>## [1] &quot;numeric&quot;</code></pre>
 </div>
 <div class="column-right">
-<pre class="julia"><code>x = 1</code></pre>
-<pre><code>## 1</code></pre>
-<pre class="julia"><code>typeof(x)</code></pre>
+<pre class="julia"><code>x = 1;
+typeof(x)</code></pre>
 <pre><code>## Int64</code></pre>
 </div>
 <div class="clear">
 
+</div>
+</div>
+<div id="dealing-with-na-missing" class="section level2">
+<h2>Dealing with NA (missing)</h2>
+<div class="column-left">
+<pre class="r"><code>x &lt;- c(1,2,NA,5)
+sum(x, na.rm = TRUE)</code></pre>
+<pre><code>## [1] 8</code></pre>
+</div>
+<div class="column-right">
+<pre class="julia"><code># not yet in v0.6.2
+#x = [1, 2, missing, 5];
+#sum(skipmissing(x))</code></pre>
+</div>
+<div class="clear">
+
+</div>
+</div>
+<div id="set-and-get-working-directory" class="section level2">
+<h2>Set and get working directory</h2>
+<div class="column-left">
+<pre class="r"><code>setwd(&quot;C:\\temp&quot;)</code></pre>
+</div>
+<div class="column-right">
+<pre class="julia"><code>cd(&quot;C:\\temp&quot;)</code></pre>
+</div>
+<div class="column-left">
+<pre class="r"><code>getwd()</code></pre>
+<pre><code>## [1] &quot;C:/temp&quot;</code></pre>
+</div>
+<div class="column-right">
+<pre class="julia"><code>pwd()</code></pre>
+<pre><code>## &quot;C:\\temp&quot;</code></pre>
 </div>
 </div>
 
